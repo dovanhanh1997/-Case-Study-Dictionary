@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DICTIONARY</title>
+</head>
+<body>
+<div id="general">
+    <H2>DICTIONARY</H2>
+<div id="serchWord">
+    <input id="wordSerch">
+    <select id="language">
+        <option value="english">English</option>
+        <option value="vietnamese">Vietnamese</option>
+    </select><br>
+    <button onclick="dictionary.serch()">Serch</button>
+    <div id="viewResult">
+        <span id="result"></span>
+    </div>
+
+</div>
+    <div class="input">
+        <label><H4>ADD NEW WORD</H4></label>
+        <p>
+            <label>Tiếng Việt</label> <br>
+            <input type="text" id="vietnam" placeholder="Nhập từ tiếng Việt">
+        </p>
+        <p>
+            <label>Tiếng Anh</label> <br>
+            <input type="text" id="english" placeholder="Nhập từ tiếng Anh">
+        </p>
+        <button onclick="dictionary.addWord()">Add new word</button>
+        <br> <br>
+    </div>
+<div id="displayWord"></div>
+<div id="showData">
+    <label><h4>DISPLAY DATA</h4></label>
+    <button onclick="dictionary.index()">Display Data</button>
+</div>
+    <span id="data"></span>
+
+
+    <script src="my.js"></script>
+    <link rel="stylesheet" href="my.css">
+
+</div>
+</body>
+</html>
