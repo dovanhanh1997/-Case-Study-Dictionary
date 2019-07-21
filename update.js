@@ -10,7 +10,7 @@ let english = function (word) {
     this.word = word;
 
     this.getWord = function () {
-        return this.word
+        return this.word;
     }
 };
 
@@ -24,22 +24,13 @@ let Dictionary = function () {
 
         let newWordVN = new vietnamese(vietnamWord);
         let newWordEN = new english(engWord);
+
         this.vietnamese.push(newWordVN);
         this.english.push(newWordEN);
+
         document.getElementById("vietnam").value = null;
         document.getElementById("english").value = null;
-    };
 
-    this.index = function () {
-        let viet = "";
-        let eng = "";
-        for (let i = 0; i < this.vietnamese.length; i++) {
-            viet += this.vietnamese[i].word + "<br>";
-            eng += this.english[i].word + "<br>";
-        }
-        this.displayData();
-        document.getElementById("showViet").innerHTML = viet;
-        document.getElementById("showEng").innerHTML = eng;
     };
 
     this.serch = function () {
@@ -60,7 +51,6 @@ let Dictionary = function () {
             case 'vietnamese':
                 html += wordSerch + "<br>";
                 for (let i = 0; i < this.english.length; i++) {
-                    console.log(this.english[i]);
                     if (wordSerch === this.english[i].word) {
                         html += this.vietnamese[i].word;
                     }
@@ -69,7 +59,6 @@ let Dictionary = function () {
                 break;
         }
     };
-
     this.displayData = function () {
         document.getElementById("data").innerHTML = '<div id="englishWord">' +
             'TIẾNG ANH <br> <br>' +
@@ -80,8 +69,21 @@ let Dictionary = function () {
             '<span id="showViet"></span>' +
             '</div>' +
             '</div>';
-    }
+    };
 
+    this.index = function () {
+        let viet = "";
+        let eng = "";
+
+        for (let i = 0; i < this.vietnamese.length; i++) {
+            viet += this.vietnamese[i].word;
+            eng += this.english[i].word;
+        }
+        this.displayData();
+        document.getElementById("showEng").innerHTML = eng;
+        document.getElementById("showViet").innerHTML = viet;
+    }
 };
+
 
 let dictionary = new Dictionary();
